@@ -1,0 +1,92 @@
+/* Header Section */
+#header{
+	background-color: #eee;
+	padding-top: 40px;
+}
+
+#header h1{
+	font-family: Cassannet;
+	font-size: 40px;
+	color: #555;
+	opacity: 0.9;
+
+}
+
+.brief{
+	font-family: Vegur;
+	font-size: 18px;
+	font-style: italic;
+	opacity: 0.8;
+	color: #555;
+	padding: 0 10px;
+}
+
+#header .row{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #999;
+}
+
+#content{
+	background-color: #eee;
+}
+
+.slider_wrapper{
+	text-align: center;	
+	padding-top: 10px;
+}
+
+.carousel-tabs { clear: both; }
+.carousel-active-tab { color: red; }	
+.carousel-disabled,
+.mr-rotato-disabled { color: #aaa; }
+
+.slider_wrapper .carousel-tabs {
+	padding: 0;
+	margin: 1em 0;
+	clear: both;
+}
+.slider_wrapper .carousel-tabs li {
+    display: inline-block; 
+    padding: 0 2px;
+}
+.slider_wrapper .carousel-tabs a {
+    background: #ddd;
+    display: inline-block;
+    height: 10px;
+    text-indent: -9999px;
+    width: 10px;
+    border-radius: 5px;
+}
+.ie .slider_wrapper .carousel-tabs li,
+.ie .slider_wrapper .carousel-tabs a { 
+	display: block;
+	float: left;
+}
+.slider_wrapper .carousel-tabs .carousel-active-tab a {
+	background: #c969e0;
+}
+
+.description{
+	padding: 20px 0;
+}
+
+.description p{
+	font-size: 18px;
+	line-height: 24px;
+	font-family: Vegur;
+	opacity: 0.8;
+	color: #333;
+	margin-bottom: 18px;
+}
+
+.description a{
+	color: #8c17a9;
+}
+
+.description a:hover{
+	color: #c969e0;
+}
+
+.italic{
+	font-style: italic;
+}
