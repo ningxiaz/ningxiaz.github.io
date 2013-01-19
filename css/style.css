@@ -139,7 +139,7 @@ table {
 }
 /* Portfolio Section */
 #portfolio{
-	background-color: #eee;
+	background-color: white;
 	min-height: 720px;
 	padding: 30px 0;
 }
@@ -239,7 +239,7 @@ ul.works img{
 
 /* About Section */
 #about{
-	background-color: #eee;
+	background-color: white;
 	min-height: 480px;
 	padding: 30px 0;
 }

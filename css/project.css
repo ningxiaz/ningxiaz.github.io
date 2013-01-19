@@ -1,6 +1,6 @@
 /* Header Section */
 #header{
-	background-color: #eee;
+	background-color: white;
 	padding-top: 40px;
 }
 
@@ -27,12 +27,12 @@
 }
 
 #content{
-	background-color: #eee;
+	background-color: white;
 }
 
 .slider_wrapper{
 	text-align: center;	
-	padding-top: 10px;
+	padding-top: 16px;
 }
 
 .carousel-tabs { clear: both; }
@@ -67,7 +67,7 @@
 }
 
 .description{
-	padding: 20px 0;
+	padding: 16px 0;
 }
 
 .description p{
