@@ -67,7 +67,7 @@
 }
 
 .description{
-	padding: 16px 0;
+	padding-top: 16px;
 }
 
 .description p{
@@ -98,4 +98,20 @@
 
 .no_top_padding{
 	padding-top: 0;
+}
+
+.back_button{
+	width: 45px;
+	height: 45px;
+	background-image: url(../images/back.png);
+	background-size: 100% auto;
+	padding: 0;
+	margin: 0 auto;
+	margin-bottom: 18px;
+	cursor: pointer;
+	opacity: 0.85;
+}
+
+.back_button:hover{
+	background-image: url(../images/back_active.png);
 }

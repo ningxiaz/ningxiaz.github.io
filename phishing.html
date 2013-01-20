@@ -28,8 +28,13 @@
   		<script src="js/modernizr.foundation.js"></script>
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 		<script src="js/foundation.min.js"></script>
-
-		<script type="text/javascript" src="js/slider.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.back_button').click(function(){
+					history.back();
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<section id="header">
@@ -55,14 +60,11 @@
 						<p>
 							This was an individual research project I did at University College Dublin as a summer intern in 2011, where I self-learned the concepts of NN, wrote some Perl scripts to process the dataset and built a very simple NN with Encog Java Core package. Later I took CS229 Machine Learning by Andrew Ng at Stanford and learned more algorithms and evaluation methods that I wished to continue with the project. So I found another partner in Statistics. Together we designed the feature set, reviewed the scripts, wrote Matlab programs to automate experiments, applied other major machine learning algorithms, conducted statistical analysis and created visualizations for the results. 
 						</p>
-						<p>
-							
-						</p>
-						<p>
-							
-						</p>
+						
 					</div>
 				</div>
+			</div>
+			<div class="back_button">
 			</div>
 		</section>
 

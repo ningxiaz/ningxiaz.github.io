@@ -28,8 +28,13 @@
   		<script src="js/modernizr.foundation.js"></script>
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 		<script src="js/foundation.min.js"></script>
-
-		<script type="text/javascript" src="js/slider.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.back_button').click(function(){
+					history.back();
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<section id="header">
@@ -65,6 +70,9 @@
 						</p>
 					</div>
 				</div>
+			</div>
+
+			<div class="back_button">
 			</div>
 		</section>
 
