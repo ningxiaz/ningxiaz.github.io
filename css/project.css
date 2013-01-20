@@ -81,6 +81,7 @@
 
 .description a{
 	color: #8c17a9;
+	cursor: pointer;
 }
 
 .description a:hover{
@@ -89,4 +90,12 @@
 
 .italic{
 	font-style: italic;
+}
+
+.with_border{
+	border: 1px solid #ccc;
+}
+
+.no_top_padding{
+	padding-top: 0;
 }
