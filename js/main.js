@@ -16,6 +16,10 @@ function resize_section(){
 	var height = $(window).height();
 	var width = $(window).width();
 
+	if(height < 630){
+		height = 630;
+	}
+
 	//set the height of intro section and place the teaser in the right place
 	$('#intro').css('height', height);
 	$('.teaser').css('top', height - 42);
@@ -31,5 +35,8 @@ function resize_section(){
 	//resize the background image of intro section
 	if(height*14.0/9 < width){
 		$('.bg').css('background-size', '100% auto');
+	}
+	else{
+		$('.bg').css('background-size', 'auto 100%');
 	}
 }
