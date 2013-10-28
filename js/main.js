@@ -15,11 +15,13 @@ $(document).ready(function(){
 function resize_section(){
 	var height = $(window).height();
 	var width = $(window).width();
-	var teaser_height = $('.teaser').height();
+	var nav_height = $('.nav').height();
 
 	//set the height of intro section and place the teaser in the right place
 	$('#intro').css('height', height);
-	$('.teaser').css('top', height - teaser_height - 10);
+	$('.nav').css('top', height - nav_height);
+	$('.nav_bg').css('height', nav_height);
+	$('.nav_bg').css('top', height - nav_height);
 
 	//resize the background images
 	if($(window).width()>1000){
