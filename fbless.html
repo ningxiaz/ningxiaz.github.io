@@ -18,6 +18,7 @@
 		<meta name="keywords" content="design, HCI, web, mobile, UX, interaction" />
 
 		<!-- Style Sheets -->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/foundation.min.css">
   		<link rel="stylesheet" href="css/app.css">
   		<link rel="stylesheet" href="css/style.css">
@@ -39,7 +40,7 @@
 					speed: 300 // ms.
 				});
 
-				$('.back_button').click(function(){
+				$('.back').click(function(){
 					history.back();
 				});
 			});
@@ -87,7 +88,12 @@
 				</div>
 			</div>
 
-			<div class="back_button">
+			<!-- <div class="back_button">
+			</div> -->
+			<div class="row back_wrapper">
+				<div class="two columns centered">
+					<a class="back">-- Back --</a>
+				</div>
 			</div>
 		</section>
 
