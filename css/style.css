@@ -92,6 +92,19 @@ body{
 	font-weight: 300;
 }
 
+#intro a {
+	color: white;
+	font-weight: 300;
+	font-style: italic;
+	opacity: 0.8;
+	-webkit-transition: opacity .3s ease-in-out;
+	transition: opacity .3s ease-in-out;
+}
+
+#intro a:hover {
+	opacity: 1;
+}
+
 #logo{
 	width: 60px;
 	float: left;
@@ -122,6 +135,8 @@ body{
 	opacity: 0.7;
 	font-style: italic;
 	padding-right: 15px;
+	-webkit-transition: opacity .3s ease-in-out;
+	transition: opacity .3s ease-in-out;
 }
 
 .nav a:hover, .nav a:active{
@@ -259,6 +274,8 @@ p.about_text{
 	color: #8c17a9;
 	font-weight: 600;
 	font-family: 'Source Sans Pro', sans-serif;
+	-webkit-transition: color .3s ease-in-out;
+	transition: color .3s ease-in-out;
 }
 
 #about a:hover{

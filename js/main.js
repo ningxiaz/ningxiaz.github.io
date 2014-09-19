@@ -6,9 +6,9 @@ $(document).ready(function(){
 	});
 
 	$('.works li').hover(function(){
-		$(this).find('.hover').fadeIn(100);
+		$(this).find('.hover').fadeIn(300);
 	}, function(){
-		$(this).find('.hover').fadeOut(100);
+		$(this).find('.hover').fadeOut(300);
 	});
 });
 

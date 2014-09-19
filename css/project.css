@@ -84,6 +84,8 @@
 	font-weight: 600;
 	color: #8c17a9;
 	cursor: pointer;
+	-webkit-transition: color .3s ease-in-out;
+	transition: color .3s ease-in-out;
 }
 
 .description a:hover{
@@ -115,6 +117,8 @@ a.back{
 	cursor: pointer;
 	font-weight: 600;
 	font-size: 18px;
+	-webkit-transition: color .3s ease-in-out;
+	transition: color .3s ease-in-out;
 }
 
 a.back:hover{
