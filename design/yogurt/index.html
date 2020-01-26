@@ -1,0 +1,139 @@
+<!DOCTYPE html><!--[if lt IE 9]>
+<html class='lt-ie9 no-js' lang='en'>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ningxia Zhang</title>
+  <meta name="description" content="Product Designer based in SF Bay Area, from China. Former Stanford CS Master in HCI.">
+  <meta name="author" content="Ningxia Zhang">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../images/favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../images/favicon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="../../images/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../../images/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="stylesheet" href="../../styles/main.css">
+  <link rel="stylesheet" type="text/css" href="https://use.typekit.net/kir7tat.css">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-79140776-1', 'auto');
+    ga('send', 'pageview');
+    
+    
+  </script>
+</head>
+<body>
+  <!--[if lt IE 9]>
+  <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <div class="project-content">
+    <div class="row">
+      <div class="large-10 medium-12 large-offset-1 columns"><h1>Yogurt</h1>
+
+<h4>A Chrome extension that helps you understand your browsing behavior and reduce distraction.</h4>
+
+<p><img alt="Yogurt" title="Yogurt" src="../../images/design/yogurt-1.jpg"></p>
+
+<h2>Motivation</h2>
+
+<p>I sat down to reply an email, but ended up browsing Facebook for 30 minutes. To many of us, the experience of getting distracted by irrelevant information is familiar and frustrating. We often wonder how frequent we get distracted, how much time we have spent on distractions and how we can do better. From there, we started to imagine a visualization tool that can help answer these questions.</p>
+
+<p>This was originally a final project of the class <a href="https://graphics.stanford.edu/wikis/cs448b-12-fall/">CS448 Data Visualization</a> taught by <a href="http://homes.cs.washington.edu/~jheer/">Jeff Heer</a> at Stanford. My team also includes Borui Wang, Zheng Shen and Jianfeng Hu.</p>
+
+<h2>Design</h2>
+
+<p>We wanted to create a browser extension that raises awareness of online distraction and foster healthy information diet, by visualizing personal browsing history in an elegant and non-intrusive way.</p>
+
+<p>The main challenge is to design a visualization that surfaces patterns from fragmented temporal data, maintains details in the data segments, and interactions that support exploration. Inspired by DNA art, we invented a visualization technique that resembles barcode. We call it barcode chart.</p>
+
+<p>More specifically in this project, each row represents the time period of one day, and contains a number of vertical stripes. The x-position of the stripe represents the time of the visit in the day. The brightness indicates the level of distraction, which is defined by the user. The width of the stripe represents the duration of the visit. With this visualization, it’s easy for the user to see when and how much time she spents on sites at different levels of distraction.</p>
+
+<p>To help the user further understand her browsing behavior, we added daily and weekly aggregated statistics on a collapsible side pane, including a ranked list of domains sorted by visiting frequency and duration.</p>
+
+<p><img alt="Yogurt" title="Yogurt" src="../../images/design/yogurt-2.jpg"></p>
+
+<p>With interaction technique similar to Brushing and Linking, we were able to let the user explore and discover more from the data. When the user hovers a particular stripe, not only she can see more details about that visit, but all other visits of the same domain within the past seven days will also be highlighted. The same will happen when the user hovers a domain from the ranked list.</p>
+
+<p>Apart from the fragmented nature, DNA art also inspired us by being highly personal. In a way, our browsing behavior is also very personal and unique to us. To add a personal touch, the user can choose from a number of color themes and export the visualization as a desktop wallpaper.</p>
+
+<p><img alt="Yogurt" title="Yogurt" src="../../images/design/yogurt-3.jpg"></p>
+
+<h2>Implementation</h2>
+
+<p>We used Chome’s API to detect browser events, WebSQL for data storage, D3 to implement the visualization. With some Javascript optimizations, Yogurt can render about 10k SVG stripes within 0.2 seconds, and support smooth interactions.</p>
+
+<p>It was published as <a href="https://chrome.google.com/webstore/detail/yogurt/bkcllpfdmadccnllfpkeipobfhclbjnf">an extension in the Chrome Store</a>, but not supported anymore.</p>
+
+<h2>Feedback</h2>
+
+<p>When Yogurt was presented at the final project fair, we received a lot of interest as well as feedback. People were generally very intrigued by the idea, and couldn’t wait to try the extension themselves. By playing with the data of my personal history in the past week, they all could see that I tended to be most productive towards midnight, then I got very distracted. I probably could have just gone to sleep.</p>
+
+<p>One concern raised is that what is the reward for people trying to cut down distractions. If we define the bright stripes as bad, the ideal state would be a visualization with dull stripes, which doesn’t seem exciting or motivating. Some people might want to have bright stripes just to make the visualization interesting. In response, we think it could be better to let users define level of interests themselves, or have other types of color encoding.</p>
+
+<p>Another concern is that people might forget about checking Yogurt after a while. How can we remind users right when users are spending too much time on a distraction? To maintain the non-intrusive nature, we added a subtle, ambient indicator on every webpage the user visits. The indicator shows the level of distraction, and how much time they’ve spent on this domain.</p>
+
+<p>We conducted a more formal lab user testing later with 8 participants. 7 out of 8 reported that they felt more comfortable with Yogurt, compared to other similar extensions and visualizations, that the mouse interactions were effective in discovering details, and that Yogurt successfully raised the awareness of online distraction and interruption.</p>
+
+<h2>Poster</h2>
+
+<p>As one of the most successful projects from the class, we were encouraged to submit Yogurt as a poster project to the <a href="http://uist.acm.org/uist2013/">UIST 2013 conference</a>. We got accepted and went to St. Andrews, Scotland to present our work. Read more about Yogurt in our paper: <a href="http://dl.acm.org/citation.cfm?id=2514729">Visualizing web browsing history with barcode chart</a>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="back"><a href="/design"><img src="../../images/arrow.svg" class="back-img"></a></div>
+  <div>
+    <footer>
+      <div class="row content--fadeIn">
+        <div class="large-12 columns clearfix footer-content">
+          <div class="footer-contact">
+            <label>Say Hi:</label><a href="mailto:ningxia.z@gmail.com">ningxia.z@gmail.com</a>
+          </div>
+          <div class="footer-copyright">
+            <p>2018 © Ningxia Zhang</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="menu">
+    <div class="menu-button"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+    <div class="menu-overlay">
+      <div class="row">
+        <div class="large-12 columns">
+          <nav>
+            <ul>
+              <li><a href="/about">About</a></li>
+              <li><a href="/design">Design</a></li>
+              <li><a href="/art">Art</a></li>
+              <li><a href="/code">Code</a></li>
+              <!-- li-->
+              <!--   a(href='/writing' class= active === 'writing'? 'is-active': '') Writing-->
+              <!-- li-->
+              <!--   a(href='/music' class= active === 'music'? 'is-active': '') Music-->
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="menu-contact">
+            <label>Say Hi</label>
+            <p><a href="mailto:ningxia.z@gmail.com">ningxia.z@gmail.com</a></p>
+          </div>
+          <div class="menu-contact">
+            <label>Connect With Me</label>
+            <p><a href="https://www.instagram.com/ningxiazzzzzzzz/" target="_blank">Instagram</a><a href="https://twitter.com/ningxiaz" target="_blank">Twitter</a><a href="https://www.linkedin.com/in/ningxiazhang" target="_blank">LinkedIn</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../scripts/main.js"></script>
+</body></html>
