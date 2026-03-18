@@ -1,0 +1,348 @@
+/* ============================================
+   Custom Properties
+   ============================================ */
+
+:root {
+  --bg:         #ffffff;
+  --ink:        #111116;
+  --ink-alt:    #161618;
+  --accent:     #7259F0;
+  --muted:      #8a8a92;
+  --pad-x:      72px;
+  --font-sans:  'Space Grotesk', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+}
+
+
+/* ============================================
+   Reset & Base
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-position: from-font;
+}
+
+
+/* ============================================
+   Nav
+   ============================================ */
+
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 36px var(--pad-x) 0;
+}
+
+.nav-name {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+
+/* ============================================
+   Main Content Wrapper
+   ============================================ */
+
+.main-content {
+  padding: 72px var(--pad-x);
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+
+/* ============================================
+   Shared 3-Column Grid
+   ============================================ */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+/* ============================================
+   Row 1 — Photo + Bio
+   ============================================ */
+
+.col-photo {
+  /* naturally occupies col 1 */
+}
+
+.photo-placeholder {
+  width: 243px;
+  height: 312px;
+  background-color: var(--accent);
+}
+
+/* When real photo is added, use this class on <img> */
+.photo {
+  width: 243px;
+  height: 312px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.col-bio {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+/* ============================================
+   Label (shared)
+   ============================================ */
+
+.label {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+
+/* ============================================
+   Bio Typography
+   ============================================ */
+
+.bio-body {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 680px;
+}
+
+.bio-art {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 28px;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+
+/* ============================================
+   Row 2 — Work / Education / Contact
+   ============================================ */
+
+.row-footer .label {
+  margin-bottom: 20px;
+}
+
+.col-work,
+.col-education,
+.col-contact {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: var(--ink-alt);
+}
+
+.item-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-position: from-font;
+}
+
+.item-meta {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  line-height: 16px;
+  color: var(--muted);
+}
+
+
+/* ============================================
+   Footer / Copyright
+   ============================================ */
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 var(--pad-x) 36px;
+}
+
+.copyright {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  line-height: 18px;
+  color: var(--ink);
+}
+
+
+/* ============================================
+   Responsive — Tablet (600–1023px)
+   ============================================ */
+
+@media (max-width: 1023px) {
+  :root {
+    --pad-x: 48px;
+  }
+
+  /* Collapse to 2 columns */
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Row 1: photo stacks above bio, both full-width */
+  .col-photo {
+    grid-column: 1 / -1;
+    margin-bottom: 32px;
+  }
+
+  .col-bio {
+    grid-column: 1 / -1;
+  }
+
+  /* Row 2: work + education side by side, contact below */
+  .col-work  { grid-column: 1; }
+  .col-education { grid-column: 2; }
+  .col-contact {
+    grid-column: 1 / -1;
+    padding-top: 40px;
+  }
+
+  .bio-body {
+    font-size: 20px;
+    line-height: 28px;
+    max-width: 100%;
+  }
+
+  .bio-art {
+    font-size: 24px;
+  }
+}
+
+
+/* ============================================
+   Responsive — Mobile (<600px)
+   ============================================ */
+
+@media (max-width: 599px) {
+  :root {
+    --pad-x: 24px;
+  }
+
+  .nav {
+    padding-top: 28px;
+  }
+
+  .main-content {
+    padding: 48px var(--pad-x);
+    gap: 48px;
+  }
+
+  /* Single column — everything stacks */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .col-photo {
+    grid-column: 1;
+    margin-bottom: 24px;
+  }
+
+  .col-bio,
+  .col-work,
+  .col-education,
+  .col-contact {
+    grid-column: 1;
+    padding-top: 0;
+  }
+
+  .col-education,
+  .col-contact {
+    padding-top: 40px;
+  }
+
+  .col-bio {
+    padding-top: 0;
+  }
+
+  .bio-body {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .bio-art {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .footer {
+    justify-content: center;
+    padding-bottom: 28px;
+  }
+}
