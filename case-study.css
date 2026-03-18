@@ -1,0 +1,301 @@
+/* ============================================
+   Case Study — Page-specific styles
+   Extends styles.css (shares all tokens + base)
+   ============================================ */
+
+
+/* ============================================
+   Nav — name as home link (no underline)
+   ============================================ */
+
+a.nav-name {
+  text-decoration: none;
+}
+
+a.nav-name:hover {
+  text-decoration: none;
+}
+
+
+/* ============================================
+   Title Block
+   ============================================ */
+
+.cs-title-block {
+  padding: 64px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 62px;
+  letter-spacing: -0.02em;
+  color: var(--ink-alt);
+}
+
+.cs-descriptor {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--muted);
+}
+
+
+/* ============================================
+   Metadata Strip
+   ============================================ */
+
+.cs-meta-strip {
+  display: flex;
+  flex-direction: row;
+  padding: 32px 0;
+  border-top: 1px solid #E5E5EB;
+  border-bottom: 1px solid #E5E5EB;
+  margin-top: 48px;
+}
+
+.cs-meta-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-meta-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0;
+}
+
+.cs-meta-value {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+
+/* ============================================
+   Hero Image
+   ============================================ */
+
+.cs-hero {
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  margin-top: 48px;
+}
+
+.cs-hero-ph {
+  width: 100%;
+  height: 480px;
+  margin-top: 48px;
+  background-color: #E5E5EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-hero-ph span {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+/* ============================================
+   Body Content
+   ============================================ */
+
+.cs-body {
+  padding: 72px var(--pad-x) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.cs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cs-text {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--ink);
+  max-width: 680px;
+}
+
+
+/* ============================================
+   Images — Contained
+   ============================================ */
+
+.cs-img-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.cs-img-contained {
+  display: block;
+  width: 100%;
+  max-width: 840px;
+  height: auto;
+}
+
+.cs-img-contained-ph {
+  width: 100%;
+  max-width: 840px;
+  height: 320px;
+  background-color: #E5E5EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-img-contained-ph span {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+/* ============================================
+   Images — Full Width (breaks out of padding)
+   ============================================ */
+
+.cs-img-full {
+  display: block;
+  width: 100vw;
+  margin-left: calc(-1 * var(--pad-x));
+  height: 420px;
+  object-fit: cover;
+}
+
+.cs-img-full-ph {
+  width: 100vw;
+  margin-left: calc(-1 * var(--pad-x));
+  height: 420px;
+  background-color: #D4D4DE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-img-full-ph span {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+/* ============================================
+   Caption
+   ============================================ */
+
+.cs-caption {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--muted);
+}
+
+
+/* ============================================
+   Footer spacing on case study pages
+   ============================================ */
+
+.cs-body + .footer {
+  margin-top: 96px;
+}
+
+
+/* ============================================
+   Responsive — Tablet (600–1023px)
+   ============================================ */
+
+@media (max-width: 1023px) {
+  .cs-meta-strip {
+    flex-wrap: wrap;
+    gap: 24px 0;
+  }
+
+  .cs-meta-field {
+    min-width: 45%;
+    flex: none;
+  }
+
+  .cs-title {
+    font-size: 44px;
+    line-height: 50px;
+  }
+}
+
+
+/* ============================================
+   Responsive — Mobile (<600px)
+   ============================================ */
+
+@media (max-width: 599px) {
+  .cs-title-block {
+    padding-top: 48px;
+  }
+
+  .cs-title {
+    font-size: 34px;
+    line-height: 40px;
+  }
+
+  .cs-meta-strip {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cs-meta-field {
+    min-width: unset;
+  }
+
+  .cs-hero,
+  .cs-hero-ph {
+    height: 280px;
+  }
+
+  .cs-text {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .cs-img-contained-ph {
+    height: 220px;
+  }
+
+  .cs-img-full,
+  .cs-img-full-ph {
+    height: 280px;
+  }
+
+  .cs-body {
+    gap: 56px;
+  }
+}
