@@ -22,7 +22,7 @@
     <div class="main-content" style="padding-bottom: 0; gap: 0;">
       <div class="cs-title-block">
         <h1 class="cs-title">Brand Equity Polling</h1>
-        <p class="cs-descriptor">Product Design · Meta · 2016 – 2018</p>
+        <p class="cs-descriptor">Product Design · Meta · 2017</p>
       </div>
 
       <!-- Metadata Strip -->
@@ -41,54 +41,109 @@
         </div>
         <div class="cs-meta-field">
           <span class="cs-meta-label">Team</span>
-          <span class="cs-meta-value">Product, Research, Data</span>
+          <span class="cs-meta-value">Product, Research, Product Marketing, Engineering, Data, Illustration</span>
         </div>
       </div>
     </div>
 
     <!-- Hero Image -->
     <div class="main-content" style="padding: 0 var(--pad-x); gap: 0;">
-      <div class="cs-hero-ph">
-        <span>Hero image</span>
-      </div>
+      <img src="../assets/brand-equity-polling/brand-3.png" class="cs-hero" alt="Visual exploration of the polling UI" />
     </div>
 
     <!-- Body -->
     <div class="cs-body">
 
+      <!-- Overview -->
       <div class="cs-section">
         <span class="label">Overview</span>
-        <p class="cs-text">[Describe the problem context: how did advertisers need to understand brand perception over time? What was the opportunity for a longitudinal polling product?]</p>
-        <p class="cs-text">[Describe the scope: what Brand Equity Polling covers, who uses it, and what the goal of this multi-year project was at a high level.]</p>
+        <p class="cs-text">I was working on the Lift team within Measurement under the Ads org at Facebook. I was the only designer on this project, collaborating with PM, UX Researcher, Content Strategist, Data Scientist, Product Marketing Manager, an Illustration Contractor, and Mobile Engineers.</p>
+        <p class="cs-text">Advertisers use Brand Lift to measure the effectiveness of their brand advertising on Facebook. We randomize a target audience into test and control groups, serve ads only to the test group, then poll both groups in News Feed with questions about the brand. By comparing favorable response rates between the two groups, we can measure whether the ads produced a lift.</p>
+        <p class="cs-text">Standard brand polling methods don't measure mid-funnel or bottom-funnel brand metrics — like Message Association or Purchase Intent — in a sensitive way. The plain polling format in News Feed wasn't effective at capturing emotional response or subtle attitude changes.</p>
+        <p class="cs-text">Project goals:</p>
+        <ul style="padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; list-style: disc;">
+          <li class="cs-text" style="max-width: 640px;">Develop new polling formats that are more effective in capturing emotional response and subtle attitude changes.</li>
+          <li class="cs-text" style="max-width: 640px;">Develop corresponding equity signal metrics that can be packaged as a solution for brand advertisers.</li>
+          <li class="cs-text" style="max-width: 640px;">Ensure the new formats don't negatively affect user sentiment or engagement with the core Facebook experience.</li>
+        </ul>
         <div class="cs-img-wrap">
-          <div class="cs-img-contained-ph"><span>Image — overview / before state</span></div>
-          <span class="cs-caption">Caption describing the image or the before state.</span>
+          <img src="../assets/brand-equity-polling/brand-1.jpg" class="cs-img-contained" alt="Standard brand polling units" />
+          <span class="cs-caption">Standard brand polling units</span>
         </div>
       </div>
 
+      <!-- My Role & Process -->
       <div class="cs-section">
         <span class="label">My Role &amp; Process</span>
-        <p class="cs-text">[Describe your specific contribution: what you owned, key decisions you made, how you approached the design problem. Mention any cross-functional collaboration, research, or constraints you navigated.]</p>
+        <p class="cs-text">Suggested by our UX Researcher (who holds a PhD in social psychology), we adopted a method from social science research to measure felt connection. In this method, participants choose the visual representation of two overlapping circles that best describes their connection to a concept — a technique known as Inclusion of Other in the Self (IOS). See: <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.621.219&rep=rep1&type=pdf" target="_blank" rel="noopener">Ingroup Identification as the Inclusion of Ingroup in the Self — Tropp &amp; Wright, 2001</a>.</p>
         <div class="cs-img-wrap">
-          <div class="cs-img-full-ph"><span>Image — process / explorations</span></div>
-          <span class="cs-caption">Caption describing the process image.</span>
+          <img src="../assets/brand-equity-polling/brand-2.png" class="cs-img-contained" alt="Initial exploration" />
+          <span class="cs-caption">Initial exploration</span>
+        </div>
+        <p class="cs-text">Through structured reviews with PMM, Data Science, and our UX Researcher, we converged on a set of key decisions:</p>
+        <ul style="padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; list-style: disc;">
+          <li class="cs-text" style="max-width: 640px;">Focus on the client brand only, not competitors.</li>
+          <li class="cs-text" style="max-width: 640px;">Capture connection to both the brand and its values.</li>
+          <li class="cs-text" style="max-width: 640px;">Let users first pick how circles represent their connection, then use a follow-up multi-choice question to probe reasons.</li>
+          <li class="cs-text" style="max-width: 640px;">Exclude social factors — measure true value choices, not how people want to appear among friends.</li>
+          <li class="cs-text" style="max-width: 640px;">Best-fit verticals: Tech, Retail, Luxury, Chain restaurants.</li>
+        </ul>
+        <p class="cs-text">With the concept defined, I moved into visual and interaction design. I used Framer to prototype the full interaction flow. A key decision was drag versus slider interaction.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/brand-equity-polling/brand-3.png" class="cs-img-contained" alt="Visual exploration" />
+          <span class="cs-caption">Visual exploration</span>
+        </div>
+        <div class="cs-img-wrap">
+          <video class="cs-video" controls playsinline>
+            <source src="../assets/brand-equity-polling/slide-drag.mp4" type="video/mp4">
+          </video>
+          <span class="cs-caption">Comparing drag vs. slider interaction</span>
+        </div>
+        <p class="cs-text">We chose the slider because it more closely approximates the established metric, and communicates affordance and range of options more clearly than drag.</p>
+        <p class="cs-text">I worked with an external illustrator to produce the custom assets before campaign launch. I communicated the design brief and asset requirements, reviewed proposals, and iterated over 6 rounds of feedback before landing on the final version.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/brand-equity-polling/brand-4.jpg" class="cs-img-contained" alt="Illustration iterations" />
+          <span class="cs-caption">Illustration iterations</span>
+        </div>
+        <div class="cs-img-wrap">
+          <video class="cs-video" controls playsinline>
+            <source src="../assets/brand-equity-polling/brand-final-1.mp4" type="video/mp4">
+          </video>
+          <span class="cs-caption">Connection format — final interaction</span>
+        </div>
+        <p class="cs-text">I collaborated with PMM and engineers to finalize the campaign schedule and ship timeline, and ensured design QA happened before engineering testing. We successfully launched this poll with Uber's brand campaign in 2017 Q4.</p>
+        <p class="cs-text">Following a similar process, we designed and launched a second format — Price Premium — with Mondelez (parent company of Oreos). This format measures whether brand advertising enables advertisers to charge a premium price compared to competitors.</p>
+        <div class="cs-img-wrap">
+          <video class="cs-video" controls playsinline>
+            <source src="../assets/brand-equity-polling/price-premium.mp4" type="video/mp4">
+          </video>
+          <span class="cs-caption">Price Premium format</span>
         </div>
       </div>
 
+      <!-- Results & Impact -->
       <div class="cs-section">
         <span class="label">Results &amp; Impact</span>
-        <p class="cs-text">[Share outcomes: metrics, qualitative wins, or business impact. Be specific about what moved as a result of your work.]</p>
-        <p class="cs-text">[Optional: include a second result or a quote from a stakeholder / partner team.]</p>
+        <p class="cs-text">Both formats agreed with comparable standard formats directionally and appeared to produce greater signal. The Connection format measured a statistically significant 22-point lift in connection score, while the comparable standard format measured only a 2.8-point lift. The Price Premium format measured a −5.9-point stat-sig lift versus a −1.6-point non-stat-sig result for the standard format.</p>
+        <p class="cs-text">CTR from the feed was significantly lower than standard formats — this needs to be addressed before drawing more definitive conclusions about the potential of the new formats.</p>
       </div>
 
+      <!-- Learnings -->
       <div class="cs-section">
         <span class="label">Learnings</span>
-        <p class="cs-text">[What did you learn from this project — about the problem space, users, your craft, or working with cross-functional teams? Be candid and specific.]</p>
+        <ul style="padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; list-style: disc;">
+          <li class="cs-text" style="max-width: 640px;">Learned to drive a project forward with cross-functional partners with limited PM support.</li>
+          <li class="cs-text" style="max-width: 640px;">Learned to involve engineering early and proactively manage risk of delays.</li>
+          <li class="cs-text" style="max-width: 640px;">Gained experience working with remote partners across time zones.</li>
+          <li class="cs-text" style="max-width: 640px;">Learned to make design decisions by synthesizing feedback from diverse perspectives — research, data science, marketing, and engineering.</li>
+          <li class="cs-text" style="max-width: 640px;">Improved craft in visual and interaction design, particularly for mobile-first polling experiences.</li>
+        </ul>
       </div>
 
+      <!-- Next Steps -->
       <div class="cs-section">
         <span class="label">Next Steps</span>
-        <p class="cs-text">[What would you explore next if you had more time? Or what is the roadmap from here? This shows product thinking beyond execution.]</p>
+        <p class="cs-text">The lower-than-expected CTR from News Feed is the most critical open question. The next step would be investigating whether the interaction complexity was the cause — and whether a simplified entry point (or a different feed placement) could improve click-through without sacrificing the signal quality. Given the strong early results from both formats, there's a real opportunity to scale this into a standardized offering for brand advertisers.</p>
       </div>
 
     </div>
@@ -99,5 +154,6 @@
     </footer>
 
   </main>
+  <script src="../lightbox.js"></script>
 </body>
 </html>

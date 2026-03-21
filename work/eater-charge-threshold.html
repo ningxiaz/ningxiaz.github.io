@@ -41,15 +41,8 @@
         </div>
         <div class="cs-meta-field">
           <span class="cs-meta-label">Team</span>
-          <span class="cs-meta-value">Product, Engineering, Finance</span>
+          <span class="cs-meta-value">Product, Engineering</span>
         </div>
-      </div>
-    </div>
-
-    <!-- Hero Image -->
-    <div class="main-content" style="padding: 0 var(--pad-x); gap: 0;">
-      <div class="cs-hero-ph">
-        <span>Hero image</span>
       </div>
     </div>
 
@@ -58,37 +51,91 @@
 
       <div class="cs-section">
         <span class="label">Overview</span>
-        <p class="cs-text">[Describe the problem context: what challenge were eaters or the business facing around order minimums / charge thresholds? What was the opportunity?]</p>
-        <p class="cs-text">[Describe the scope: what this feature is, who it affected, and what the goal of this project was at a high level.]</p>
+        <p class="cs-text">I work on the Restaurant team at Uber Eats, responsible for all projects related to menus. For this project, I led the design, working closely with a PM, Content Strategist, designers on the Eater team in San Francisco, and engineers.</p>
+        <p class="cs-text">Charge threshold allows restaurants to charge or refund eaters based on the customization choices they make when ordering. We had previously built charge thresholds at the modifier <em>option</em> level — for example, the default recipe comes with 3 slices of tomato, and you're charged extra if you go over 5. This project extends that to the modifier <em>group</em> level: when you go over a "Choose Your Toppings" threshold, you're charged extra based on the total count, not per-option.</p>
         <div class="cs-img-wrap">
-          <div class="cs-img-contained-ph"><span>Image — overview / before state</span></div>
-          <span class="cs-caption">Caption describing the image or the before state.</span>
+          <img src="../assets/eater-charge-threshold/gct-option-ct.png" class="cs-img-contained" alt="Charge threshold at the modifier option level">
+          <span class="cs-caption">Charge threshold at the modifier option level</span>
         </div>
+        <p class="cs-text">Supporting group-level charge thresholds had been descoped from an earlier project due to attribution complexity: when an eater exceeds the threshold, it's difficult to determine which option contributed to the extra charge, especially when options are priced differently. To move forward, we negotiated with the enterprise client to restrict the feature to modifier groups where all options share the same price — sufficient for their current needs and fast enough to bring their menus online.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/eater-charge-threshold/gct-problem.png" class="cs-img-contained" alt="Attribution complexity at the modifier group level">
+          <span class="cs-caption">Attribution complexity at the modifier group level</span>
+        </div>
+        <p class="cs-text">Several strategic partners required this feature before they could bring their menus onto the platform. It also expanded our library of complex menu structures, making Uber Eats viable for restaurants with sophisticated customizations — salad bars, poke places, and similar formats.</p>
       </div>
 
       <div class="cs-section">
         <span class="label">My Role &amp; Process</span>
-        <p class="cs-text">[Describe your specific contribution: what you owned, key decisions you made, how you approached the design problem. Mention any cross-functional collaboration, research, or constraints you navigated.]</p>
+        <p class="cs-text">I took a mobile-first approach, as we have a web framework that translates mobile designs to web automatically. My first instinct was a summary bar to display the extra charge or refund as eaters made selections.</p>
         <div class="cs-img-wrap">
-          <div class="cs-img-full-ph"><span>Image — process / explorations</span></div>
-          <span class="cs-caption">Caption describing the process image.</span>
+          <img src="../assets/eater-charge-threshold/gct-summary.png" class="cs-img-contained" alt="Initial exploration: summary bar">
+          <span class="cs-caption">Initial exploration: summary bar</span>
+        </div>
+        <p class="cs-text">After design reviews with the Eater team, we identified two problems with the summary bar: it risked being confused with another menu item, and it felt disconnected from the rule ("includes 5") that triggers the charge. I iterated with the Content Strategist on tying the rule and the charge/refund summary together visually. We stress-tested across different rule combinations and localization scenarios before landing on the final treatment.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/eater-charge-threshold/gct-final-charge.png" class="cs-img-contained" alt="Final design — charge state">
+          <span class="cs-caption">Final design — charge state</span>
+        </div>
+        <div class="cs-img-wrap">
+          <img src="../assets/eater-charge-threshold/gct-final-refund.png" class="cs-img-contained" alt="Final design — refund state">
+          <span class="cs-caption">Final design — refund state</span>
+        </div>
+        <div class="cs-img-wrap">
+          <img src="../assets/eater-charge-threshold/gct-cases.png" class="cs-img-contained" alt="Edge case coverage">
+          <span class="cs-caption">Edge case coverage</span>
+        </div>
+        <p class="cs-text">On the checkout page, eaters need to review their full order before confirming payment. Adding group-level charge thresholds required modifying the order summary to include modifier group headers and attribute price changes at the group level. I used this as an opportunity to clean up the existing order summary, which had become difficult to scan with complex orders.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/eater-charge-threshold/gct-checkout.png" class="cs-img-contained" alt="Two approaches to the order summary">
+          <span class="cs-caption">Two approaches to the order summary</span>
+        </div>
+        <p class="cs-text">I evaluated two approaches: showing the full result list (every item including defaults) versus showing only the delta (what the eater changed). After competitor analysis, the delta approach was clearly preferable — cleaner, more scannable, and consistent with how other apps handle it. I then worked with the Content Strategist to map out all the semantic variations across different selector types (radio buttons, checkboxes, incrementors) to find a solution that was consistent, accurate, and localizable.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/eater-charge-threshold/gct-logic.png" class="cs-img-contained" alt="Selector semantics and content logic">
+          <span class="cs-caption">Selector semantics and content logic</span>
+        </div>
+        <p class="cs-text">During engineering, a new constraint emerged: nested modifiers can be up to 6 levels deep, making a fully hierarchical UI difficult to build at scale. I proposed flattening the nesting structure in the order summary — it doesn't reduce clarity and is significantly easier to build and maintain.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/eater-charge-threshold/gct-simplify.png" class="cs-img-contained" alt="Flattening nested modifier structure">
+          <span class="cs-caption">Flattening nested modifier structure</span>
+        </div>
+        <div class="cs-img-wrap">
+          <video class="cs-video" controls playsinline style="max-width: 420px;">
+            <source src="../assets/eater-charge-threshold/charge_above.mp4" type="video/mp4">
+          </video>
+          <span class="cs-caption">Final mobile experience</span>
+        </div>
+        <p class="cs-text">Once the mobile experience was finalized, translating it to web was straightforward. I worked with the web Eats designer to ensure the designs conformed to her framework.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/eater-charge-threshold/gct-web.png" class="cs-img-contained" alt="Web experience">
+          <span class="cs-caption">Web experience</span>
+        </div>
+        <p class="cs-text">The feature touched many other surfaces beyond the ordering flow: in-app and email receipts, Restaurant Dashboard (the tablet app restaurant staff use to process orders), and Restaurant Manager (where owners review order history and payouts). For each surface I examined the specific user need and made changes accordingly. On Restaurant Dashboard, for example, it was important for kitchen staff to see the full ingredient list rather than relying on memory for the default recipe.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/eater-charge-threshold/gct-other.png" class="cs-img-contained" alt="Receipts and restaurant-facing surfaces">
+          <span class="cs-caption">Receipts and restaurant-facing surfaces</span>
         </div>
       </div>
 
       <div class="cs-section">
         <span class="label">Results &amp; Impact</span>
-        <p class="cs-text">[Share outcomes: metrics, qualitative wins, or business impact. Be specific about what moved as a result of your work.]</p>
-        <p class="cs-text">[Optional: include a second result or a quote from a stakeholder / partner team.]</p>
+        <p class="cs-text">The project shipped and is live. It unblocked several strategic enterprise partners, enabling their menus to come onto the Uber Eats platform. It also extended our menu infrastructure to support a new class of complex customization structures available to all restaurants.</p>
       </div>
 
       <div class="cs-section">
         <span class="label">Learnings</span>
-        <p class="cs-text">[What did you learn from this project — about the problem space, users, your craft, or working with cross-functional teams? Be candid and specific.]</p>
+        <ul class="cs-list">
+          <li>Menu projects are complex by nature — this one was especially challenging because the pricing logic had to be communicated clearly in a consumer context where cognitive load is already high.</li>
+          <li>Coordinating cross-team design work (with the Eater team in San Francisco) required being proactive about alignment and clear documentation of decisions.</li>
+          <li>Designing a feature that touches many surfaces at once demands a systematic approach — understanding each surface's user needs independently before trying to find a unified solution.</li>
+          <li>Close collaboration with engineers during implementation surfaces constraints early; the nested modifier simplification was a better solution precisely because engineering raised it.</li>
+        </ul>
       </div>
 
       <div class="cs-section">
         <span class="label">Next Steps</span>
-        <p class="cs-text">[What would you explore next if you had more time? Or what is the roadmap from here? This shows product thinking beyond execution.]</p>
+        <p class="cs-text">The same-price restriction was the right pragmatic call to ship, but it leaves a real gap for restaurants with variably-priced options. The next step would be revisiting the attribution problem — exploring whether a clear enough disclosure model (e.g., "the most expensive item counts toward your charge") could unlock the full feature without confusion. There's also an opportunity to make charge threshold rules more visible during menu setup on the restaurant side, so restaurant owners can configure and preview the eater experience before going live.</p>
       </div>
 
     </div>
@@ -99,5 +146,6 @@
     </footer>
 
   </main>
+  <script src="../lightbox.js"></script>
 </body>
 </html>

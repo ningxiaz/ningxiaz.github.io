@@ -46,11 +46,11 @@
       </div>
     </div>
 
-    <!-- Hero Image -->
+    <!-- Hero Video -->
     <div class="main-content" style="padding: 0 var(--pad-x); gap: 0;">
-      <div class="cs-hero-ph">
-        <span>Hero image</span>
-      </div>
+      <video class="cs-hero cs-hero--contained" autoplay loop muted playsinline poster="../assets/brand-lift-report/brandreport.jpg">
+        <source src="../assets/brand-lift-report/brandreport.mp4" type="video/mp4">
+      </video>
     </div>
 
     <!-- Body -->
@@ -58,37 +58,79 @@
 
       <div class="cs-section">
         <span class="label">Overview</span>
-        <p class="cs-text">[Describe the problem context: how did advertisers struggle to understand brand impact from their Meta campaigns? What was the opportunity?]</p>
-        <p class="cs-text">[Describe the scope: what Brand Lift reporting covers, who uses it, and what the goal of this project was at a high level.]</p>
+        <p class="cs-text">I was working on the Lift team within Measurement under the Ads org at Facebook. I led the design effort in redesigning the Brand Lift report, working closely with PM, UX Research, and a Content Strategist. In parallel, I collaborated with a peer designer to develop a unified lift reporting framework extensible across measurement tools.</p>
+        <p class="cs-text">Brand Lift is one of the measurement solutions Facebook offers. We randomize a target audience into test and control groups, serve ads only to the test group, then poll both groups in News Feed with questions about the brand. By comparing favorable response rates between the two groups, we can measure whether the ads produced a lift.</p>
+        <p class="cs-text">At the time, only advertisers with a sufficient budget had access to account teams to help set up tests and interpret results. The existing Brand Lift reports were difficult to use independently — lacking metric clarity, a clear narrative, and actionable guidance. In order to empower more advertisers with Lift and enable self-serve access, we needed to redesign the report from the ground up.</p>
         <div class="cs-img-wrap">
-          <div class="cs-img-contained-ph"><span>Image — overview / before state</span></div>
-          <span class="cs-caption">Caption describing the image or the before state.</span>
+          <img src="../assets/brand-lift-report/brandreport-1.png" class="cs-img-contained" alt="The previous Brand Lift report">
+          <span class="cs-caption">The previous Brand Lift report</span>
         </div>
+        <p class="cs-text">Project goals:</p>
+        <ul class="cs-list">
+          <li>A new reporting experience that guides advertisers to interpret results correctly and make more informed business decisions.</li>
+          <li>A new reporting framework that unifies Brand Lift and Conversion Lift, extensible to support Split Testing, Offline Sales, and other measurement tools.</li>
+        </ul>
       </div>
 
       <div class="cs-section">
         <span class="label">My Role &amp; Process</span>
-        <p class="cs-text">[Describe your specific contribution: what you owned, key decisions you made, how you approached the design problem. Mention any cross-functional collaboration, research, or constraints you navigated.]</p>
+        <p class="cs-text">I started by auditing the existing report UI, compiling prior research findings, PMM inbound feedback, and evaluating the interface against design principles. Key problems identified: lack of a true summary page, content competing for attention, metrics that advertisers couldn't interpret without expert help, and natural language statements that conflated concepts.</p>
         <div class="cs-img-wrap">
-          <div class="cs-img-full-ph"><span>Image — process / explorations</span></div>
-          <span class="cs-caption">Caption describing the process image.</span>
+          <img src="../assets/brand-lift-report/brandreport-2.png" class="cs-img-contained" alt="Design process overview">
+          <span class="cs-caption">Design process overview</span>
+        </div>
+        <p class="cs-text">To answer what report narrative makes sense and what helps ease understanding and promotes actionability, we conducted research with 10 advertisers and advertising agencies in London using participatory design. Participants were given cards — each with a description of information and a visual example — and asked to assemble their ideal report. I led the card design and worked closely with UX Research on planning and conducting the sessions.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/brand-lift-report/brandreport-3.png" class="cs-img-contained" alt="Examples of the participatory design cards">
+          <span class="cs-caption">Examples of the participatory design cards</span>
+        </div>
+        <p class="cs-text">Key learnings from participatory design:</p>
+        <ul class="cs-list">
+          <li>Ideal narrative: recap of test setup → results → recommendations</li>
+          <li>Advertisers want more actionable data cuts tied to their business goals</li>
+          <li>Reports should include more visual, collapsible, and downloadable content for internal share-outs</li>
+        </ul>
+        <p class="cs-text">In parallel, a peer designer was working on the Conversion Lift report — which would be unified on the same platform. We ran a design sprint with cross-functional partners to establish a shared reporting framework, then built prototypes for each use case to validate it.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/brand-lift-report/brandreport-4.png" class="cs-img-contained" alt="The Lift report framework">
+          <span class="cs-caption">The Lift report framework</span>
+        </div>
+        <p class="cs-text">Working with UX Research, we tested the prototype with 16 advertisers and agencies across New York City and Chicago to evaluate whether the prototype achieved its goals.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/brand-lift-report/brandreport-5.png" class="cs-img-contained" alt="At the research session">
+          <span class="cs-caption">At the research session</span>
+        </div>
+        <p class="cs-text">Key findings from prototype testing:</p>
+        <ul class="cs-list">
+          <li>The Answer Page needed to contain all data necessary for determining overall campaign success</li>
+          <li>Reports needed to communicate in advertisers' language, not measurement jargon</li>
+          <li>Plain-language metric explanations and confidence level guidance were essential</li>
+          <li>Facebook needed to take a clear stance on measurement definitions</li>
+        </ul>
+        <p class="cs-text">A lot of the problems uncovered in research were about content. I worked in close collaboration with a Content Strategist to revise metric definitions, natural language statements, and test terminology. After content was finalized, I spec'd out the full design and worked with engineers on requirements and edge cases — including localization for long strings and right-to-left languages.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/brand-lift-report/brandreport-6.png" class="cs-img-contained" alt="Localization design for long strings and right-to-left languages">
+          <span class="cs-caption">Localization design for long strings and right-to-left languages</span>
         </div>
       </div>
 
       <div class="cs-section">
         <span class="label">Results &amp; Impact</span>
-        <p class="cs-text">[Share outcomes: metrics, qualitative wins, or business impact. Be specific about what moved as a result of your work.]</p>
-        <p class="cs-text">[Optional: include a second result or a quote from a stakeholder / partner team.]</p>
+        <p class="cs-text">The report was built and shipped together with the self-serve Brand Lift solution, making Lift accessible to a much broader set of advertisers for the first time. The project contributed to measured spend — our top-line metric — though I did not get to see the detailed analysis.</p>
       </div>
 
       <div class="cs-section">
         <span class="label">Learnings</span>
-        <p class="cs-text">[What did you learn from this project — about the problem space, users, your craft, or working with cross-functional teams? Be candid and specific.]</p>
+        <ul class="cs-list">
+          <li>Content and design need to work together to tell a cohesive story. The most impactful improvements in this project came from revising language, not visual design.</li>
+          <li>Communicating complex statistical concepts in plain terms — without introducing misunderstandings — is genuinely hard and requires close collaboration with content and research.</li>
+          <li>Learned different research methodologies (participatory design, prototype testing) and how to partner effectively with UX Research across both.</li>
+        </ul>
       </div>
 
       <div class="cs-section">
         <span class="label">Next Steps</span>
-        <p class="cs-text">[What would you explore next if you had more time? Or what is the roadmap from here? This shows product thinking beyond execution.]</p>
+        <p class="cs-text">The self-serve launch was the foundation. The natural next step is closing the feedback loop — giving advertisers clearer guidance on how to act on results across different confidence scenarios (low, medium, high), and surfacing recommendations that tie directly to their campaign objectives. Longer term, the unified reporting framework creates an opportunity to give advertisers a single, consistent view across all measurement solutions: Brand Lift, Conversion Lift, and Split Testing together.</p>
       </div>
 
     </div>
@@ -99,5 +141,6 @@
     </footer>
 
   </main>
+  <script src="../lightbox.js"></script>
 </body>
 </html>
