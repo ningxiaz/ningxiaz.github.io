@@ -15,7 +15,8 @@
 
     <!-- Nav -->
     <nav class="nav">
-      <a href="../index.html" class="nav-name">Ningxia Zhang</a>
+      <a href="../" class="nav-name">Ningxia Zhang</a>
+      <a href="eater-charge-threshold.html" class="nav-next">Eater Charge Threshold →</a>
     </nav>
 
     <!-- Title Block -->
@@ -41,54 +42,136 @@
         </div>
         <div class="cs-meta-field">
           <span class="cs-meta-label">Team</span>
-          <span class="cs-meta-value">Product, Engineering</span>
+          <span class="cs-meta-value">Product, Engineering, Research, Operations</span>
         </div>
       </div>
     </div>
 
     <!-- Hero Image -->
     <div class="main-content" style="padding: 0 var(--pad-x); gap: 0;">
-      <div class="cs-hero-ph">
-        <span>Hero image</span>
-      </div>
+      <img src="../assets/menu-restaurants/hero.png" alt="Menu Maker redesign" class="cs-hero cs-hero--contained" />
     </div>
 
     <!-- Body -->
     <div class="cs-body">
 
       <div class="cs-section">
-        <span class="label">Overview</span>
-        <p class="cs-text">[Describe the problem context: what challenge did diners or restaurants face with how menus were presented? What was the opportunity?]</p>
-        <p class="cs-text">[Describe the scope: what this project covered, who it affected, and what the goal was at a high level.]</p>
+        <span class="cs-section-title">Context</span>
+        <p class="cs-text">I joined Uber Eats as the designer leading the Menus team within the Restaurant organization in New York in March 2019. The team was responsible for the full menu ecosystem: the ordering experience for eaters on iOS, Android, and web; the tools restaurants use to manage their menus; and the internal tools used by Uber's support and operations teams.</p>
+        <p class="cs-text">Menus have a deeply nested structure — a restaurant can have multiple locations, each with multiple menus, categories, items, modifier groups, and modifier options. Managing this complexity accurately is critical: an incorrect price or a missing item directly impacts both restaurant revenue and the eater experience.</p>
         <div class="cs-img-wrap">
-          <div class="cs-img-contained-ph"><span>Image — overview / before state</span></div>
-          <span class="cs-caption">Caption describing the image or the before state.</span>
+          <img src="../assets/menu-restaurants/menu-ecosystem.png" alt="The menu ecosystem: Eaters, Restaurants, and Internal Users" class="cs-img-contained" />
+          <span class="cs-caption">The menu ecosystem spans eaters (ordering), restaurants (management), and internal Uber teams.</span>
+        </div>
+        <p class="cs-text">The flagship tool for restaurant menu management was <strong>Menu Maker</strong> — a web product two years in the making when I joined, just beginning its rollout. Restaurants used it to update prices, add or remove items, and manage modifier groups. Uber's support agents used it too, making edits on behalf of restaurants that couldn't or wouldn't self-serve.</p>
+      </div>
+
+      <div class="cs-section">
+        <span class="cs-section-title">Research &amp; Problem</span>
+        <p class="cs-text">Early in 2019, I traveled to Bangalore, São Paulo, Mexico City, and Hyderabad to conduct interviews, usability testing, and in-person observations with restaurant owners, managers, and internal support agents. These trips were formative — they surfaced not just usability gaps but a fundamental breakdown in restaurant confidence and trust in the tool.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/menu-restaurants/fieldtrip.png" alt="Field research across four cities: Bangalore, São Paulo, Mexico City, Hyderabad" class="cs-img-contained" />
+          <span class="cs-caption">Field research across four cities in early and mid 2019.</span>
+        </div>
+        <p class="cs-text">The qualitative findings were consistent across markets:</p>
+        <ul class="cs-list">
+          <li>Restaurants wanted to edit everything from one place — constant context switching between tabs broke their flow</li>
+          <li>No clear workflow or conceptual model made it hard to know where to go or what had been changed</li>
+          <li>The difficulty to use obscured the product's actual value</li>
+          <li>Restaurants lacked confidence that the changes they made were applied correctly</li>
+        </ul>
+        <p class="cs-text">The data told the same story. <strong>53% of users were overall dissatisfied</strong> with Menu Maker, and <strong>50% reported it was somewhat or very difficult to use.</strong> Perhaps most revealing: of all restaurants who contacted Uber support to make menu changes, <strong>almost 80% had tried Menu Maker first.</strong> This wasn't an access problem — it was a usability problem.</p>
+        <p class="cs-text">Looking at the support ticket breakdown, <strong>price changes (27%)</strong> and <strong>item additions/deletions (23%)</strong> were the most common requests. These were the jobs restaurants needed to do most, and the current tool was failing them at exactly those tasks.</p>
+      </div>
+
+      <div class="cs-section">
+        <span class="cs-section-title">Prioritization &amp; Planning</span>
+        <p class="cs-text">During 2020 planning, I worked with my PM to make the case for a major investment in self-serve menu management. The project aligned directly with two Uber Eats company objectives: reducing support costs (every ticket avoided was operational savings) and improving menu accuracy (incomplete or incorrect menus hurt eater experience and restaurant performance alike). It was prioritized as one of the most important efforts for the year.</p>
+        <p class="cs-text">A key strategic decision was how to approach the scope. The team had just spent two years building Menu Maker — a monolithic redesign would be a hard sell, both politically and practically. Instead, we planned a <strong>continuous improvement roadmap</strong> built around a new UI framework that each subsequent project could build on:</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/menu-restaurants/roadmap.png" alt="Project roadmap: UI Framework, Price Edits, Adding/deleting entities, Complete other workflows, Mobile App" class="cs-img-contained" />
+          <span class="cs-caption">A phased roadmap: ship the framework first, then layer in the highest-priority workflows one at a time.</span>
         </div>
       </div>
 
       <div class="cs-section">
-        <span class="label">My Role &amp; Process</span>
-        <p class="cs-text">[Describe your specific contribution: what you owned, key decisions you made, how you approached the design problem. Mention any cross-functional collaboration, research, or constraints you navigated.]</p>
+        <span class="cs-section-title">Framework Design</span>
+        <p class="cs-text">Before any specific workflows could be redesigned, I needed to establish a new UI framework — the layout, information architecture, and interaction model that all future work would build on. Three design principles guided every decision:</p>
+        <ul class="cs-list">
+          <li><strong>Clarity</strong> — restaurants should know exactly how to make changes</li>
+          <li><strong>Confidence</strong> — restaurants should feel certain that changes they made are what they intended</li>
+          <li><strong>Speed</strong> — editing menus should be quick and not tedious</li>
+        </ul>
+        <p class="cs-text">The framework had to answer two core questions: what is the best layout for the main editing view, and how should modifiers — the most structurally complex part of any menu — be handled.</p>
+
+        <p class="cs-text"><strong>Layout.</strong> I ran 45-minute remote usability sessions with 7 restaurant partners in the US and Brazil using interactive prototypes, testing three layout approaches. The table view (preferred by 3 of 7) won on scannability and speed, offering direct access to prices and out-of-stock toggles at a glance — the things restaurants needed to do most. Card view looked cleaner but was harder to scan at scale and skewed too consumer-facing. List view split the difference but obscured modifier information.</p>
         <div class="cs-img-wrap">
-          <div class="cs-img-full-ph"><span>Image — process / explorations</span></div>
-          <span class="cs-caption">Caption describing the process image.</span>
+          <img src="../assets/menu-restaurants/three-layouts.png" alt="Three layout prototypes: Table View, List View, Card View" class="cs-img-contained" />
+          <span class="cs-caption">Three layout explorations tested with restaurant partners. Table view emerged as the preferred approach.</span>
+        </div>
+
+        <p class="cs-text"><strong>Modifiers.</strong> Modifiers are the single biggest source of complexity in menu management. They can be shared across items (one "Choice of Side" used for all entrees), they have rules (required/optional, min/max selections), and restaurants rarely change their rules — making it wasteful to expose that complexity upfront. I tested three approaches for how to surface modifier editing:</p>
+        <ul class="cs-list">
+          <li><strong>Side panel:</strong> clicking an item reveals modifiers in a contextual panel — good for complex settings, but too many clicks for quick tasks</li>
+          <li><strong>Expansion/nested:</strong> items expand inline to show modifier groups — intuitive, but loses the shared relationship and pushes content down</li>
+          <li><strong>Direct access + side panel:</strong> modifier groups shown directly with highlights for shared usage — clearest on relationships, but harder to scale</li>
+        </ul>
+        <div class="cs-img-wrap">
+          <img src="../assets/menu-restaurants/three-modifier-approaches.png" alt="Three modifier approaches: Side Panel, Expansion/Nested, Direct Access + Side Panel" class="cs-img-contained" />
+          <span class="cs-caption">Modifier interaction explorations, tested with 7 restaurant partners.</span>
+        </div>
+
+        <p class="cs-text">The final framework combined the table layout with a right-side panel for modifiers — accessed by selecting an item, with keyboard navigation (UP/DOWN keys) to step through items quickly. This gave restaurants the speed of a table view for bulk scanning, with quick access to modifier details without leaving the page.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/menu-restaurants/updated-framework.png" alt="Final framework: table layout with modifier side panel" class="cs-img-contained" />
+          <span class="cs-caption">The updated framework: table view with inline editing, and a side panel for modifier details.</span>
+        </div>
+
+        <p class="cs-text">I also designed for future extensibility: a top-level tab structure (Menu / Hours / Modifiers / Optimizations) to accommodate hours management, a full modifier library, and ML optimization suggestions — leaving room for the roadmap without cluttering the immediate experience.</p>
+        <div class="cs-img-wrap">
+          <img src="../assets/menu-restaurants/future-proof-1.png" alt="Future-proof design: Hours, Modifiers, Optimizations tabs" class="cs-img-contained" />
+          <img src="../assets/menu-restaurants/future-proof-2.png" alt="Future-proof design: multi-location copy, item metadata panel" class="cs-img-contained" style="margin-top: 12px;" />
+          <span class="cs-caption">The framework was designed to support future capabilities: multi-location edits, a modifier library, and ML suggestions.</span>
         </div>
       </div>
 
       <div class="cs-section">
-        <span class="label">Results &amp; Impact</span>
-        <p class="cs-text">[Share outcomes: metrics, qualitative wins, or business impact. Be specific about what moved as a result of your work.]</p>
-        <p class="cs-text">[Optional: include a second result or a quote from a stakeholder / partner team.]</p>
+        <span class="cs-section-title">Execution</span>
+        <p class="cs-text">The first project built on this framework was <strong>Price Edits</strong> — the most requested support ticket category at 27%. The work covered: inline price editing directly in the table, new visual styling, item details in a side panel (replacing a separate page), modifiers shown in the same panel, and inline out-of-stock and photo management.</p>
+
+        <p class="cs-text"><strong>Editing a modifier option price.</strong> In the old tool, updating a topping price meant navigating between two separate tabs with no visibility into where that modifier group was used across the menu. In the redesign, the same task happens in one place: select the item, open the modifier in the side panel, edit inline, and receive a clear confirmation of what changed and where the change takes effect.</p>
+        <div class="cs-before-after">
+          <div class="cs-ba-col">
+            <video src="../assets/menu-restaurants/Option%20price%20edit%20old.mov" autoplay loop muted playsinline></video>
+            <span class="cs-caption">Before — navigate between two tabs, no awareness of shared effects.</span>
+          </div>
+          <div class="cs-ba-col">
+            <video src="../assets/menu-restaurants/Option%20price%20edit.mov" autoplay loop muted playsinline></video>
+            <span class="cs-caption">After — one place, clear communication, confident confirmation.</span>
+          </div>
+        </div>
+
+        <p class="cs-text"><strong>Adding a new modifier option.</strong> Adding a topping to a shared modifier group was similarly fragmented in the original tool — it required switching to a separate Modifier Groups tab with no connection back to the items it affected. The redesign brings this into the same item-editing flow, making the shared relationship explicit and confirmation immediate.</p>
+        <div class="cs-before-after">
+          <div class="cs-ba-col">
+            <video src="../assets/menu-restaurants/Add%20topping%20old.mov" autoplay loop muted playsinline></video>
+            <span class="cs-caption">Before — go between two tabs, difficult to add a new option, no awareness of shared effects.</span>
+          </div>
+          <div class="cs-ba-col">
+            <video src="../assets/menu-restaurants/Add%20topping.mov" autoplay loop muted playsinline></video>
+            <span class="cs-caption">After — one place, shared impact clearly communicated.</span>
+          </div>
+        </div>
       </div>
 
       <div class="cs-section">
-        <span class="label">Learnings</span>
-        <p class="cs-text">[What did you learn from this project — about the problem space, users, your craft, or working with cross-functional teams? Be candid and specific.]</p>
-      </div>
-
-      <div class="cs-section">
-        <span class="label">Next Steps</span>
-        <p class="cs-text">[What would you explore next if you had more time? Or what is the roadmap from here? This shows product thinking beyond execution.]</p>
+        <span class="cs-section-title">Learnings</span>
+        <ul class="cs-list">
+          <li>Learned to influence product prioritization with design — using research findings and data to build the case for a strategic investment in a tool the team had only just shipped</li>
+          <li>Learned to approach a large, complex project incrementally — defining a north star framework and shipping toward it in focused, prioritized phases rather than one monolithic redesign</li>
+          <li>Learned to partner with a PM on project planning that integrates cross-functional inputs: engineering constraints, ops data, research findings, and company objectives</li>
+          <li>Continued to refine my design craft on a complex B2B tool, where information density, workflow clarity, and interaction precision matter as much as visual polish</li>
+        </ul>
       </div>
 
     </div>

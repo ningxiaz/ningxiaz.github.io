@@ -40,6 +40,7 @@ main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-top: 56px; /* fixed nav height */
 }
 
 ul {
@@ -59,18 +60,45 @@ a {
    ============================================ */
 
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg);
   display: flex;
   align-items: center;
-  padding: 36px var(--pad-x) 0;
+  justify-content: space-between;
+  padding: 20px var(--pad-x);
 }
 
 .nav-name {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-name:hover {
+  color: var(--accent);
+}
+
+.nav-next {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+
+.nav-next:hover {
+  color: var(--accent);
 }
 
 
@@ -346,4 +374,36 @@ a {
     justify-content: center;
     padding-bottom: 28px;
   }
+}
+
+/* Press links (Instacart Ads) */
+.press-list {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.press-link {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.press-link:hover {
+  color: var(--ink);
+}
+
+/* Art star link */
+.art-star {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.art-star:hover {
+  opacity: 0.75;
 }
